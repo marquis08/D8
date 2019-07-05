@@ -1,0 +1,34 @@
+import gc
+import os
+import time
+import logging
+import datetime
+import warnings
+import numpy as np
+import pandas as pd
+import seaborn as sns
+import xgboost as xgb
+import lightgbm as lgb
+from scipy import stats
+from scipy.signal import hann
+from tqdm import tqdm_notebook
+import matplotlib.pyplot as plt
+from scipy.signal import hilbert
+from scipy.signal import convolve
+from sklearn.svm import NuSVR, SVR
+from catboost import CatBoostRegressor
+from sklearn import metrics
+from sklearn.kernel_ridge import KernelRidge
+from sklearn.metrics import mean_squared_error
+from sklearn.preprocessing import LabelEncoder
+from sklearn.metrics import mean_absolute_error
+from sklearn.preprocessing import StandardScaler
+from sklearn.linear_model import LinearRegression
+from sklearn.model_selection import KFold,StratifiedKFold, RepeatedKFold
+from sklearn.feature_selection import RFECV
+from operator import itemgetter
+warnings.filterwarnings("ignore")
+path = "../Dacon_8th/"
+file_list = os.listdir(path)
+file_list_csv = [file for file in file_list if file.endswith(".csv")]
+print ("file_list_csv: {}".format(file_list_csv))
